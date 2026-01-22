@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner - Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="brand-icon me-2">
+                    <img src="images/logo.svg" alt="Meal Planner Logo" width="32" height="32">
+                </div>
+                <span>Meal Planner</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-meal.html">
+                            <i class="bi bi-plus-circle me-1"></i>Add Meal
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="analytics.html">
+                            <i class="bi bi-graph-up me-1"></i>Analysis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food-library.html">
+                            <i class="bi bi-book me-1"></i>Food Library
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="settings.html">
+                            <i class="bi bi-gear me-1"></i>Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container mt-5 pt-4">
+            <h1 class="page-title mb-4">Settings</h1>
+
+            <!-- Daily Calorie Goal Card -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Daily Calorie Goal</h3>
+                    <div class="d-flex gap-3 align-items-end">
+                        <div class="flex-fill">
+                            <label for="calorieGoal" class="form-label">Calories per day</label>
+                            <input type="number" class="form-control" id="calorieGoal" 
+                                   value="2000" min="1000" max="5000" required>
+                        </div>
+                        <button type="button" class="btn btn-success" id="updateGoalBtn"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top" 
+                                title="Update your daily calorie goal">
+                            <i class="bi bi-check-lg me-1"></i>Update Goal
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Management Card -->
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">Data Management</h3>
+                    
+                    <!-- Export Options Section -->
+                    <div class="export-section">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-download text-success me-2" style="font-size: 1.25rem;"></i>
+                            <h5 class="mb-0">Export Data</h5>
+                        </div>
+                        <p class="text-muted small mb-3">Export your meal planning data in JSON or XML format</p>
+                        
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="exportFormat" class="form-label fw-semibold">Export Format</label>
+                                <select class="form-select" id="exportFormat">
+                                    <option value="json" selected>JSON (.json)</option>
+                                    <option value="xml">XML (.xml)</option>
+                                </select>
+                                <small class="form-text text-muted">Choose the file format</small>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="exportType" class="form-label fw-semibold">Export Type</label>
+                                <select class="form-select" id="exportType">
+                                    <option value="all">All Data</option>
+                                    <option value="library">Food Library</option>
+                                    <option value="weekly">Weekly Consumption</option>
+                                    <option value="monthly">Monthly Consumption</option>
+                                </select>
+                                <small class="form-text text-muted">Select what to export</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-2">
+                            <button type="button" class="btn btn-success btn-lg" id="exportDataBtn"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="top" 
+                                    title="Export your data in the selected format and type">
+                                <i class="bi bi-download me-2"></i>Export Data
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Clear Data Section -->
+                    <div class="clear-section">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-exclamation-triangle text-danger me-2" style="font-size: 1.25rem;"></i>
+                            <h5 class="mb-0">Clear Data</h5>
+                        </div>
+                        <p class="text-muted small mb-3">Permanently delete all your meal planning data. This action cannot be undone.</p>
+                        <button type="button" class="btn btn-danger btn-lg" id="clearDataBtn"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top" 
+                                title="Permanently delete all your meal planning data">
+                            <i class="bi bi-trash me-2"></i>Clear All Data
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/modal-utils.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
+

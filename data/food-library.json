@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "name": "String Hoppers (2 pieces)",
+        "calories": 140
+    },
+    {
+        "id": 2,
+        "name": "Egg Hopper",
+        "calories": 180
+    },
+    {
+        "id": 3,
+        "name": "Roti (1 piece)",
+        "calories": 60
+    },
+    {
+        "id": 4,
+        "name": "Rice & Curry (1 plate)",
+        "calories": 450
+    },
+    {
+        "id": 5,
+        "name": "Kottu Roti (1 portion)",
+        "calories": 600
+    },
+    {
+        "id": 6,
+        "name": "Dhal Curry (1 cup)",
+        "calories": 120
+    },
+    {
+        "id": 7,
+        "name": "Coconut Sambol (2 tbsp)",
+        "calories": 80
+    },
+    {
+        "id": 8,
+        "name": "Pol Roti (1 piece)",
+        "calories": 150
+    },
+    {
+        "id": 9,
+        "name": "Kiribath (1 piece)",
+        "calories": 200
+    },
+    {
+        "id": 10,
+        "name": "Watalappan (1 piece)",
+        "calories": 250
+    }
+]
+
